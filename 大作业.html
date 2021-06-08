@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .whole{
+            width:1200px;
+            margin:0 auto;
+            text-align: center;
+        }
+        .music{
+            width:1200px;
+            margin:0 auto;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style-type:none;
+        }
+        .header{
+            width:1200px;
+            height:60px;
+            margin:0 auto;
+            text-align: center;
+            background-color: black;
+        }
+        .nav{
+            width:1100px;
+            height:60px;
+            margin:0 auto;
+            display:flex;
+            justify-content: space-between;
+            line-height: 60px;
+        }
+        .column1{
+            display:flex;
+            justify-content: space-between;
+            height:60px;
+            line-height:60px;
+            padding:0;
+            margin:0;
+        }
+        .column1>li{
+            margin-right:25px;
+        }
+        .column1>li a{
+            color:white;
+            font-size: 15px;
+        }
+        .column1>li a:hover{
+            color:gold;
+        }
+        .column2{
+            display:flex;
+            justify-content: space-between;
+            height:60px;
+            line-height: 60px;
+            margin:0;
+            padding:0;
+        }
+        .column2>li{
+            margin-left: 10px;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .bg{
+            width:35px;
+            height:35px;
+            background-image: url('images/1.png');
+            background-position: -230px -247px;
+            margin-top:8px;
+        }
+        .column2>li a{
+            color:rgb(190, 184, 184);
+            font-size: 12px;
+            margin-left:-16px ;
+        }
+        .column2>li a:hover{
+            color:gold;
+        }
+        .column3{
+            display:flex;
+            justify-content: center;
+            height:60px;
+            line-height: 60px;
+        }
+        .column3>a{
+            color:white;
+            font-size: 10px;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-top: 4px;
+        }
+        .column3>a:hover{
+            color:gold;
+        }
+        .column3>div img{
+            line-height: 60px;
+            margin-top: 18px;
+        }
+        .column3>div form{
+            margin-top: -68px;
+        }
+        .wenzi{
+            border:none;
+            outline: none;
+            color:white;
+            background-color:transparent;
+        }
+        .column4{
+            display:flex;
+            justify-content: center;
+            height:60px;
+            line-height: 60px;
+            margin:0;
+            padding:0;
+        }
+        .column4>li{
+            margin-left: 15px;
+        }
+        .column4>li a{
+            color:white;
+            font-size: 14px;
+        }
+        .column4>li a:hover{
+            color:gold;
+        }
+        .middle{
+            width:1100px;
+            height:900px;
+            margin: 0 auto;
+            display:flex;
+            justify-content: space-between;
+        }
+        .left{
+            width:650px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        .left>p{
+            margin-top: -10px;
+            font-size:14px;
+            margin-bottom: 30px;
+        }
+        h1{
+            font-size: 30px;
+        }
+        .article{
+            height: 360px;
+            margin-top: 30px;
+            overflow-y: scroll;
+        }
+
+        /* 设置滚动条的样式 */
+        ::-webkit-scrollbar {
+            width:12px;
+        }
+            /* 滚动槽 */
+        ::-webkit-scrollbar-track {
+            box-shadow:inset006pxrgba(0,0,0,0.3);
+            border-radius:10px;
+        }
+            /* 滚动条滑块 */
+        ::-webkit-scrollbar-thumb {
+            border-radius:10px;
+            background:rgba(0,0,0,0.1);
+            box-shadow:inset006pxrgba(0,0,0,0.5);
+        }
+        ::-webkit-scrollbar-thumb:window-inactive {
+            background:rgba(255,0,0,0.4);
+        }    
+
+        .left>div div{
+            margin-bottom: 16px;
+        }
+        .left>div p:nth-child(n){
+            margin-top: -48px;
+        }
+        span{
+            color:gold;
+            display: inline-block;
+        }
+        .profile{
+            display: flex;
+            justify-content: center;
+        }
+        .profile>a{
+            color:black;
+        }
+        .photo{
+            width:20px;
+            height: 20px;
+            background-image:url("images/commentIcon.jpg");
+            background-repeat: no-repeat;
+            margin-left:20px;
+            margin-right: 5px;
+            margin-top: 4px;
+        }
+        .photo:hover{
+            cursor: pointer;
+        }
+        .right{
+            width:450px;
+            margin:0 auto;
+            margin-top: 75px;
+        }
+        @keyframes animation1{
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        .picture{
+            width:300px;
+            height:300px;
+            margin: 0 auto;
+            border-radius: 50%;
+            border:1px solid rgb(163, 162, 162);
+        }
+        .picture>div{
+            width:292px;
+            height:292px;
+            margin:0 auto;
+            margin-top: 4px;
+            background-image: url('images/7.jpg');
+            background-repeat: no-repeat;
+            border-radius: 50%; 
+            background-clip:margin-box;
+            background-size: contain;
+            /* animation:animation1 5s linear infinite; */
+        }
+        .between{
+            width:60px;
+            height:60px;
+            border:1px solid rgb(163, 162, 162);
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            transform: translate(116px,116px);
+        }
+        .between>div{
+            width:16px;
+            height:16px;
+            border:1px solid rgb(163, 162, 162);
+            border-radius: 50%;
+            background-color:white;
+            opacity: 1;
+            transform: translate(22px,22px);
+        }
+        .progress{
+            width:400px;
+            height:50px;
+            margin:0 auto;
+            margin-top: 35px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .controllBtn{
+            width:42px;
+            height:40px;
+            background-image: url('images/8.jpg');
+            background-position: -110px -88px;
+        }
+        .controllBtn:hover{
+            background-position: -162px -88px;
+            cursor:pointer;
+        }
+        .play{
+            width:42px;
+            height:40px;
+            background-image: url('images/8.jpg');
+            background-position: -207px -88px;
+        }
+        .play:hover{
+            background-position: -207px -136px;
+            cursor:pointer;
+        }
+        .progressBar{
+            width:275px;
+            height:4px;
+            background-image: url('images/prograssBg.png');
+            margin-top: 18px;
+            margin-left: 8px;
+            background-color: rgb(196, 194, 194);
+        }
+        .wp{
+            width: 0px;
+            height: 4px;
+            background: url('images/prograssBg.png');
+            position: relative;
+        }
+        .remove{
+            width: 0px;
+            height: 4px;
+            background: #ffcd2d;
+        }
+        .wp .rbtn{
+            width:10px;
+            height:10px;
+            background: #ffcd2d;
+            border-radius: 50%;
+            margin-top:-7px;
+            position: absolute;
+        }
+        .time{
+            color:rgb(179, 177, 177);
+            width:40px;
+            height:10px;
+            margin-top:8px;
+            margin-left: 8px;
+            font-size: 15px;
+        }
+        .voice{
+            width:20px;
+            height:20px;
+            background-image: url('images/8.jpg');
+            background-position: -45px 0px;
+            margin-top: 10px;
+            margin-left: 8px;
+        }
+        .voice:hover{
+            background-position: -70px 0px;
+            cursor:pointer;
+        }
+        .load{
+            width:200px;
+            height:50px;
+            margin:0 auto;
+            background-image: url('images/8.jpg');
+            background-position: 0 -44px;
+            background-repeat: no-repeat;
+            text-align: center;
+            margin-top: 45px;
+        }
+        .logo{
+            width:19px;
+            height:19px;
+            background-image: url('images/8.jpg');
+            position: absolute;
+            margin-top: 13px;
+            margin-left: 25px;
+        }
+        .load>a{
+            position: absolute;
+            width:130px;
+            height:20px;
+            font-size: 18px;
+            margin-top: 11px;
+            margin-left: -48px;
+            color: black;
+        }
+        .message{
+            display: flex;
+            justify-content: center;
+        }
+        #rad{
+            display: block;
+            width:50px;
+            height:50px;
+            border-radius: 50%;
+            margin-top:50px;
+            margin-left: -340px;
+        }
+        #rect{
+            margin-left:25px;
+            margin-top: 30px;
+        }
+        #rect>div{
+            width:350px;
+            height:90px;
+            background-color: rgb(216, 216, 218);
+            border-radius: 15px;
+            position: absolute;  
+        }
+        #per{
+            width:150px;
+            height:20px;
+            margin-left:10px;
+            font-size: 16px;
+            color:rgb(112, 112, 112);
+        }
+        #top{  
+            position: absolute;  
+            width: 0px;  
+            height: 0px;  
+            line-height: 0px;
+            border-bottom: 18px solid rgb(218, 216, 215);  
+            border-left: 12px solid #fff;  
+            border-right: 12px solid #fff;  
+            left: -20px;  
+            top: 20px;  
+            transform: rotate(-90deg);
+        }  
+        #discuss{
+            width:350px;
+            height:50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #discuss>p:nth-child(1){
+            width:20px;
+            height:20px;
+            background-image: url('images/gif.gif');
+            background-size: contain;
+            margin:0;
+            margin-left: 25px;
+        }
+        #discuss>p:nth-child(2){
+            width:150px;
+            height:20px;
+            margin: 0;
+            margin-left: -100px;
+            font-size: 16px;
+        }
+        #discuss>a{
+            margin-right: 20px;
+        }
+        .mark{
+            width:1100px;
+            margin:0 auto;
+        }
+        .mark>div:nth-child(1){
+            display: flex;
+            border-bottom: 1px solid rgb(128, 126, 126);
+        }
+        .mark>div:nth-child(1) p:nth-child(1){
+            font-size: 20px;
+            color: rgb(128, 126, 126);
+        }
+        .mark>div:nth-child(1) p:nth-child(2){
+            font-size: 15px;
+            margin-left: 20px;
+            margin-top: 26px;
+            color: rgb(128, 126, 126);
+        }
+        .mark>div:nth-child(2){
+            display: flex;
+        }
+        .mark>div:nth-child(2) img{
+            width:80px;
+            height:80px;
+            margin-top: 30px;
+        }
+        .mark>div:nth-child(2) form{
+            width:990px;
+            height:150px;
+            margin-top: 25px;
+            margin-left: 22px;
+        }
+        #opinion{
+            width:990px;
+            height:150px;  
+            outline: none;
+            font-size: 20px;
+            color: black;
+            overflow-x:hidden;
+        }
+        #opinion::-webkit-input-placeholder{
+            color: rgb(197, 196, 194);
+            font-size: 18px;
+            position: relative;
+            left:5px;
+            top:5px;
+        } 
+        .mark>div:nth-child(3){
+            display: flex;
+            justify-content: space-between;
+        }
+        .mark>div:nth-child(3) p:nth-child(1){
+            width:30px;
+            height:30px;
+            background-image: url('images/commenticon.png');
+            background-size: contain;
+        }
+        .mark>div:nth-child(3) p:nth-child(1):hover{
+            cursor: pointer;
+        }
+        #sum{
+            color:rgb(128, 126, 126);
+            margin-left: 820px;
+            margin-top: 25px;
+        }
+        .mark>div:nth-child(3) button{
+            width:100px;
+            height:40px;
+            background-color: orange;
+            color:white;
+            font-weight: bold;
+            line-height: 40px;
+            margin-top: 15px;
+            border: none;
+            font-size: 18px;
+        }
+        .mark>div:nth-child(3) button:hover{
+            cursor: pointer;
+        }
+        .excellent{
+            width:1100px;
+            margin:0 auto;
+            margin-top: 60px;
+        }
+        .excellent>p:nth-child(1){
+            display: flex;
+            font-size: 20px;
+            color: rgb(128, 126, 126);
+        }
+        .excellent>div{
+            display: flex;
+            justify-content: space-between;
+        }
+        .excellent>div>img{
+            width:80px;
+            height:80px;
+            margin-top: 30px;
+        }
+        .excellent>div>div{
+            width:990px;
+            height:220px;
+        }
+        .in{
+            width:990px;
+            height:60px;
+            font-size:18px;
+            text-align: left;
+        }
+        .excellent>div>div div:nth-child(1){
+            width:990px;
+            height:60px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .excellent>div>div div:nth-child(1)>p{
+            font-size: 20px;
+            color: gold;
+        }
+        .excellent>div>div div:nth-child(1)>a{
+            color: black;
+            margin-top:20px;
+        }
+        .excellent>div>div div:nth-child(1)>a:hover{
+            font-weight: bold;
+        }
+        .excellent>div>div div:nth-child(2){
+            display: flex;
+            justify-content: space-between;
+        }
+        .date{
+            width:990px;
+            height:30px;
+            display: flex;
+            justify-content: space-between;
+            margin-top:10px;
+        } 
+        .date>p{
+            width:200px;
+            height:30px;
+            line-height: 30px;
+            margin-top: -1px;
+            margin-left: -20px;
+        }
+        .date>div>button{
+            border:none;
+            background-color: white;
+            font-size: 16px;
+        }
+        .date>div>button:hover{
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .date>div>p{
+            width:20px;
+            height:30px;
+            margin:0;
+            line-height: 30px;
+        }
+        .date>div>div{
+            width:20px;
+            height:20px;
+            background-image: url("images/bg2.jpg");
+            background-size: contain;
+            margin-left: 15px;
+            margin-top: 2px;
+            margin-right: 10px;
+        }
+        .date>div>div:hover,.date>div>div:active{
+            background-image: url("images/bg3.jpg");
+            background-size: contain;
+            cursor: pointer;
+        }
+        .date>div>a{
+            margin-top: 2px;
+            color: black;
+        }
+        .date>div>a:hover{
+            font-weight: bold;
+        }
+        .footer{
+            width:500px;
+            height: 50px;
+            line-height: 50px;
+            margin:0 auto;
+            display: flex;
+            justify-content: space-between;   
+
+        }
+        .footer>a{
+            width:50px;
+            height:50px;
+            background-color: rgb(230, 227, 227);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            color:black;
+            font-size: 15px;
+        }
+        .footer>a:hover{
+            color: white;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="whole">
+        <div class="music">
+            <div class="header">
+                <div class="nav">
+                    <img src="images/4.jpg" alt="图片"/>
+                    <ul class="column1">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">榜单</a></li>
+                        <li><a href="#">歌手</a></li>
+                        <li><a href="#">下载酷我客户端</a></li>
+                    </ul>
+                    <ul class="column2">
+                        <li><div class="bg"></div><a href="#">圣女秀</a></li>
+                        <li><div class="bg"></div><a href="#">酷我耳机</a></li>
+                        <li><div class="bg"></div><a href="#">VIP会员</a></li>
+                        <li><div class="bg"></div><a href="#">听</a></li>
+                    </ul>
+                    <ul class="column4">
+                        <li><a href="#">更多服务</a></li>
+                        <li><a href="#">登录</a></li>
+                    </ul>
+                    <div class="column3">
+                        <a href="#">^</a>
+                        <div>
+                            <img src="images/6.png" alt="图片"/>
+                            <form>
+                                <input type="text" name="search" placeholder="找到好音乐" class="wenzi"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle"> 
+                <div class="left">
+                    <h1>喜羊羊</h1>
+                    <div class="profile">专辑：<span>儿歌大全</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        歌手：<span>华语群星</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="">分享</a>
+                        <div class="photo"></div>
+                        <a href="#">评论</a>
+                    </div>
+                    <p>上传时间：2015-10-02&nbsp;&nbsp;歌曲来源：民大相思湖网球社</p>
+                    <hr/>
+                    <div class="article">
+                        <div>喜羊羊 美羊羊 懒羊羊 沸羊羊</div><br/>
+                    　　<p>慢羊羊 软绵绵 红太狼 灰太狼</p><br/>
+                    　　<p>别看我只是一只羊</p><br/>
+                    　　<p>绿草因为我变得更香</p><br/>
+                    　　<p>天空因为我变得更蓝</p><br/>
+                    　　<p>白云因为我变得柔软</p><br/>
+                    　　<p>别看我只是一只羊</p><br/>
+                    　　<p>羊儿的聪明难以想象</p><br/>
+                    　　<p>天再高心情一样奔放</p><br/>
+                    　　<p>每天都追赶太阳</p><br/>
+                    　　<p>有什么难题&nbsp;&nbsp;去牵绊我&nbsp;&nbsp;都不会去心伤</p><br/>
+                    　　<p>有什么危险&nbsp;&nbsp;在我面前&nbsp;&nbsp;也不会去慌乱</p><br/>
+                    　　<p>就算有狼群&nbsp;&nbsp;把我追捕&nbsp;&nbsp;也当作游戏一场</p><br/>
+                    　　<p>在什么时间&nbsp;&nbsp;都爱开心&nbsp;&nbsp;笑容都会飞翔</p><br/>
+                    　　<p>就算会摔倒站得起来&nbsp;&nbsp;永远不会沮丧</p> <br/>
+                    　　<p>在所有天气&nbsp;&nbsp;拥有叫人&nbsp;&nbsp;大笑的力量</p><br/>
+                    　　<p>虽然我只是羊</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <audio autoplay="autoplay" id="mymusic">
+                        <source src="images/喜羊羊.mp3" type="audio/mp3">
+                      </audio>
+                    <div class="picture">
+                        <div>
+                            <div class="between">
+                                <div></div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="progress">
+                        <div class="controllBtn"></div>
+                        <div class="progressBar">
+                            <div class="wp">
+                                <div class="remove"></div>
+                                <div class="rbtn"></div>
+                            </div>
+                        </div>
+                        <p class="time">00:00</p>
+                        <div class="voice"></div>
+                    </div>
+                    <div class="load">
+                        <div class="logo"></div>
+                        <a href="#">免费下载这首歌</a>
+                    </div>
+                    <div class="message">
+                        <img src="images/郭子仪.jpg" alt='图片' id="rad"/>
+                        <div id="rect">
+                            <div>
+                                <p id="per">郭子仪——H5班</p>
+                                <div id="discuss">
+                                    <p></p>
+                                    <p>喜羊羊与灰太狼</p>
+                                    <a href="#">去现场  ></a>
+                                </div>
+                                <p id="top"></p>
+                            </div>  
+                        </div> 
+                          
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="mark">
+            <div>
+                <p>评论</p>
+                <p>1703条评论</p>
+            </div>
+            <div>
+                <img src='images/郭子仪.jpg' alt='图片'/>
+                <form>
+                    <textarea type="text" name="remark" placeholder="分享你的音乐见解" id="opinion"></textarea>
+                </form>
+            </div>
+            <div>
+                <p></p>
+                <p id="sum">已经输入0个字</p>
+                <button id="pinglun">评论</button>
+            </div>
+        </div>
+        <div class="excellent">
+            <p>精彩评论</p>
+            <hr/>
+            <div class="person">
+                <img src="images/郭子仪.jpg" alt='图片'/>
+                <div>
+                    <div>
+                        <p>郭子仪</p>
+                        <a href="#">分享</a>
+                    </div>
+                    <div class="in"></div>
+                    <div class="date">
+                        <p class="format"></p>
+                        <div>
+                            <button class="del">删除</button>
+                            <p>163</p>
+                            <div></div>
+                            <a href="#">回复</a>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="person">
+                <img src="images/5.jpg" alt='图片'/>
+                <div>
+                    <div>
+                        <p>Forget</p>
+                        <a href="#">分享</a>
+                    </div>
+                    <div class="in"></div>
+                    <div class="date">
+                        <p class="format"></p>
+                        <div>
+                            <!-- <button class="del">删除</button> -->
+                            <p>149</p>
+                            <div></div>
+                            <a href="#">回复</a>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="person">
+                <img src="images/5.jpg" alt='图片'/>
+                <div>
+                    <div>
+                        <p>亚里士多德</p>
+                        <a href="#">分享</a>
+                    </div>
+                    <div class="in"></div>
+                    <div class="date">
+                        <p class="format"></p>
+                        <div>
+                            <!-- <button class="del">删除</button> -->
+                            <p>106</p>
+                            <div></div>
+                            <a href="#">回复</a>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="#"><</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            ...
+            <a href="#">17</a>
+            <a href="#">></a>
+        </div>
+    </div>
+</body>
+<script>
+    var mymusic=document.getElementById("mymusic");
+    var transmit=document.getElementsByClassName("controllBtn")[0];
+    var bar=document.getElementsByClassName("remove")[0];
+    var prograssBar=document.getElementsByClassName("progressBar")[0];
+    var sound=document.getElementsByClassName("voice")[0];
+    var time=document.getElementsByClassName("time")[0];
+    var process=document.getElementsByClassName("rbtn")[0];
+    var wp=document.getElementsByClassName("wp")[0];
+    var picture=document.getElementsByClassName("picture")[0];
+    var i=0;
+    var j=0;
+
+    //播放时间格式化
+    function timeFormat(t){
+        if(parseInt(t/60)>=1&&parseInt(t%60)>=10){
+            return "0"+parseInt(t/60)+":"+parseInt(t%60);
+        }
+        else if(parseInt(t/60)>=1&&parseInt(t%60)<10){
+            return "0"+parseInt(t/60)+":"+"0"+parseInt(t%60);
+        }
+        else if(parseInt(t/60)>=10&&parseInt(t%60)>=10){
+            return parseInt(t/60)+":"+parseInt(t%60);
+        }
+        else if(parseInt(t/60)>=10&&parseInt(t%60)<10){
+            return parseInt(t/60)+":"+"0"+parseInt(t%60);
+        }
+        else if(parseInt(t)>=10){
+            return "00"+":"+parseInt(t);
+        }
+        else{
+            return "00"+":"+"0"+parseInt(t);
+        }
+        
+    }
+
+    var long=prograssBar.clientWidth;
+    wp.style.width=long+"px";
+
+    //播放与暂停
+    transmit.onclick=function(){
+        if(i%2==0){
+            mymusic.play();
+            transmit.setAttribute("class","play");
+            picture.style.animation='animation1 5s linear infinite';
+            picture.style.animationPlayState="running";
+            timer=setInterval(function(){
+                var getCurrent=mymusic.currentTime;
+                var whole=mymusic.duration;
+                time.innerHTML=timeFormat(getCurrent);
+                var get=parseInt(getCurrent);
+                var who=parseInt(whole);
+                bar.style.width=(get/who)*long+"px";
+                process.style.left=(get/who)*(long-process.clientWidth)+"px";
+            },1000);
+        }
+        else{
+            mymusic.pause();
+            transmit.setAttribute("class","controllBtn");
+            picture.style.animationPlayState="paused";
+            clearInterval(timer);
+        }
+        i++;
+    }
+
+    //静音
+    var voice=mymusic.volume;
+    sound.onclick=function(){
+        if(j%2==0){
+            mymusic.volume=0;
+        }
+        else{
+            mymusic.volume=voice;
+        }
+        j++;
+    }
+
+    //时间戳格式化
+    function getDated(a){
+        var date=new Date(a);
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth()+1 < 10 ? ('0'+(date.getMonth()+1)):date.getMonth()+1) + '-';
+        var D = (date.getDate()< 10 ? ('0'+date.getDate()):date.getDate())+ ' ';
+        var h = (date.getHours() < 10 ? ('0'+date.getHours()):date.getHours())+ ':';
+        var m = (date.getMinutes() < 10 ? ('0'+date.getMinutes()):date.getMinutes()) + ':';
+        var s = date.getSeconds() < 10 ? ('0'+date.getSeconds()):date.getSeconds();
+        return Y+M+D+h+m+s;  
+    }
+
+    var opinion=document.getElementById('opinion');
+    var del=document.getElementById('del');
+    var format=document.getElementsByClassName("format");
+    var pin=document.getElementsByClassName('in');
+    var sum=document.getElementById('sum');
+    var ping=document.getElementById('pinglun');
+    var person=document.getElementsByClassName('person');
+    var del=document.getElementsByClassName('del');
+
+    //统计输入框字数
+    opinion.onkeyup=function(){
+        var tol=opinion.value;
+        var len=tol.length;
+        var str="已经输入"+len+"个字";
+        sum.innerHTML=str;
+    }
+
+    //本地存储
+    function saveStorage() {
+        var list=localStorage['list'];
+        if(list==null||list==""){
+            list='[]';
+        }
+        var data = opinion.value;
+        var time = (new Date()).getTime();
+        list = JSON.parse(list);
+        var obj={
+            "time":getDated(time),
+            "data":data
+        };
+        list.push(obj);
+        list = JSON.stringify(list);
+        localStorage['list']=list;
+    }
+    function getSave(){
+        var list=localStorage['list'];
+        if(list==null||list==""){
+            list='[]';
+        }
+        list=JSON.parse(list);
+        for(var i=0;i<list.length;i++){
+            format[format.length-i-1].innerHTML=list[i]['time'];
+            pin[pin.length-i-1].innerHTML=list[i]['data'];
+        }
+    }
+    ping.onclick=function(){
+        if(opinion.value==''){
+            alert("评论不能为空！");
+        }
+        saveStorage();
+        opinion.value='';
+        sum.innerHTML='已经输入'+0+"个字";
+        getSave();
+    }
+    window.onload=function(){
+        getSave();
+    }
+</script>
+</html>
